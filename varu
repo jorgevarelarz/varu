@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varu - Moda Retro</title>
+    <!-- Vinculación de la fuente desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@700&display=swap" rel="stylesheet">
+    <!-- Vinculación de la biblioteca de iconos FontAwesome gratuita -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #fff; /* Cambiado a blanco */
+            color: #000; /* Cambiado a negro */
+            font-family: 'Kode Mono', monospace; /* Cambiado a Kode Mono */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative; /* Añadido para posicionar los botones */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .brand {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: rotateName 5s linear infinite; /* Animación para girar el nombre */
+        }
+        @keyframes rotateName {
+            0% {
+                transform: rotateY(0deg); /* Inicio de la rotación horizontal */
+            }
+            100% {
+                transform: rotateY(360deg); /* Fin de la rotación horizontal */
+            }
+        }
+        .slogan {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .button {
+            background-color: #000; /* Cambiado a negro */
+            color: #fff; /* Cambiado a blanco */
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #f00;
+        }
+        .logo {
+            width: 200px; /* Ancho del logo */
+            height: auto; /* Altura ajustada automáticamente */
+            margin-bottom: 20px;
+        }
+        /* Estilo para las categorías */
+        #categories {
+            display: flex; /* Hace que los elementos internos se muestren en línea */
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+        .category {
+            border: 2px solid #000; /* Borde sólido de 2px en color negro */
+            padding: 10px; /* Espaciado interno de 10px */
+            margin: 0 10px; /* Margen horizontal de 10px */
+        }
+        /* Estilos para los botones en la esquina superior derecha */
+        .action-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .action-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #000;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+        .action-button:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://i.imgur.com/l5KRKjY.png" alt="Logo Varu" class="logo"> <!-- Utiliza la URL directa de tu logo -->
+    <h1 class="brand">VARU</h1>
+    <p class="slogan">Dress the past, make history in the present</p>
+    <!-- Agrega un ID a la sección de categorías -->
+    <button class="button" onclick="scrollToCategories()">Explorar Ahora</button>
+</div>
+
+<!-- Agrega un espacio en blanco para que el desplazamiento sea más visible -->
+<div style="height: 1500px;"></div>
+
+<!-- Sección de Categorías -->
+<div id="categories">
+    <div class="category">Basic</div>
+    <div class="category">Drop</div>
+    <div class="category">Joyas</div>
+    <div class="category">New</div>
+</div>
+
+<!-- Botones en la esquina superior derecha -->
+<div class="action-buttons">
+    <button class="action-button">Log in / Sign in</button>
+</div>
+
+<!-- Script para desplazamiento suave -->
+<script>
+    function scrollToCategories() {
+        // Obtiene la posición de la sección de categorías
+        const categoriesSection = document.getElementById('categories');
+        const yOffset = 2000; // Ajusta el valor para desplazar más lejos
+
+        // Realiza el desplazamiento suave hasta la sección de categorías
+        window.scrollTo({
+            top: categoriesSection.offsetTop + yOffset,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</body>
+</html>
